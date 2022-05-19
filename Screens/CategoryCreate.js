@@ -55,14 +55,12 @@ const CategoryCreate = (props) => {
                                 "image": values.image,
                             },
                         )
-                        console.log(Data);
                         AsyncStorage.setItem(
                             'categoryListItems',
                             JSON.stringify(Data),
                         ).then((res) => {
                             if (Data) {
                                 props.navigation.navigate('CategoryListing')
-                                console.log("suvv");
                             } else {
                                 props.navigation.navigate('CategoryListing')
                             }
@@ -124,7 +122,6 @@ const CategoryCreate = (props) => {
                                             const res = await DocumentPicker.pick({
                                                 type: [DocumentPicker.types.images],
                                             });
-                                            console.log('DocumentPicker res : ' + JSON.stringify(res));
                                             formikProps.setFieldValue('image', res[0].uri);
 
                                         } catch (err) {
@@ -160,10 +157,11 @@ const CategoryCreate = (props) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        backgroundColor: 'white'
     },
     headerWrap: {
         alignItems: 'center',
-        paddingVertical: 50,
+        paddingVertical: 100,
 
     },
     headeTextColor: {
@@ -172,7 +170,7 @@ const styles = StyleSheet.create({
     },
     buttonWrap: {
         height: 50,
-        backgroundColor: 'green',
+        backgroundColor: '#DE0E44',
         marginHorizontal: 16,
         marginTop: 8,
         alignItems: 'center',
@@ -196,7 +194,7 @@ const styles = StyleSheet.create({
         width: 40,
         height: 40,
         backgroundColor: 'white',
-        borderColor: 'lightgrey',
+        borderColor: '#F1EAEB',
         borderWidth: 1,
         alignItems: 'center',
         justifyContent: 'center',

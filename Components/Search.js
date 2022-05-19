@@ -1,24 +1,25 @@
 import React from "react";
-import { StyleSheet, View, TextInput, Text, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, TextInput, Image } from 'react-native';
 
 const Search = (props) => {
 
     return (
 
         <View style={styles.container}>
-            <View style={styles.searchTextField}>
+            <View style={styles.textInput}>
+                <Image
+                    style={{ width: 30, height: 30, borderRadius: 15, marginLeft: 10 }}
+                    source={{
+                        uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn8fVRbzomE8UxAfdF_d1qgcln-V1NCBwStg&usqp=CAU",
+                    }} />
                 <TextInput
                     placeholder={"Enter category name"}
-                    style={styles.textInput}
+                    style={styles.searchTextField}
                     placeholderTextColor="grey"
                     onChangeText={props.onChangeText}
                     value={props.value}
                 />
             </View>
-            <TouchableOpacity style={styles.buttonWrap}
-                onPress={props.onSearch}>
-                <Text style={styles.buttonText}>Search</Text>
-            </TouchableOpacity>
         </View>
     )
 }
@@ -31,23 +32,29 @@ const styles = StyleSheet.create({
         marginVertical: 25
     },
     searchTextField: {
+        color: 'grey',
         flex: 1,
+        width: '100%',
+        height: 40,
     },
     textInput: {
+        flex: 1,
         height: 40,
         borderColor: 'grey',
-        borderWidth: 1,
-        padding: 10,
-        color: 'grey'
+        borderWidth: 0.2,
+        borderRadius: 5,
+        flexDirection: 'row',
+        alignItems: 'center'
     },
 
     buttonWrap: {
-        width: 70,
+        width: 60,
         height: 40,
-        backgroundColor: 'green',
+        backgroundColor: '#DE0E44',
         marginLeft: 10,
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        borderRadius: 5
     },
     buttonText: {
         color: 'white'

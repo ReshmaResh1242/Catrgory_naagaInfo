@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     color: '#696969',
   },
   textBox: {
-    borderColor: 'lightgrey',
+    borderColor: '#F1EAEB',
     backgroundColor: '#fff',
     borderWidth: 1,
     paddingHorizontal: 12,
